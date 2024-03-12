@@ -4,7 +4,7 @@ public:
 
     int maxSubArray(vector<int>& nums) {
      
-
+//kadanes algo
         int sum=0;
         int max = nums[0];
 
