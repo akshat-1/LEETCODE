@@ -1,19 +1,21 @@
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
-        
-        int val=0;
-        for(int i=0 ; i<nums.size() ; i++)
-        {
-            if(val<0)
-            return false;
-            
-            if( nums[i] > val)
-            val = nums[i];
-            
-            val--;
+        int n = nums.size() -1;
+        if(n == 0) return true;
+        int rechable= 0;
+
+        for(int i=0 ; i<n+1;i++)
+        {   
+            if( i + nums[i] > rechable)
+            {
+                rechable = nums[i] + i;
+            }
+            if( rechable >= n) return true;  
+            if(i>= rechable) return false;
+
+
         }
-        
-        return true;
+        return false;
     }
 };
